@@ -1,32 +1,31 @@
+import java.io.IOException;
 import java.sql.*;
 
-public class Authentification
-{
-  public static void main(String args[]) throws Exception
-  {
-      Connection con=null;
-      Statement stmt;
-      
-      Class.forName("org.postgresql.Driver"); 
-      
-      
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-      String url = "jdbc:postgresql://psqlserv/n3p1";
-      String nom = "admin";
-      String mdp = "xxx";
-      con = DriverManager.getConnection(url,nom,mdp);
-      stmt = con.createStatement();
-      String query = "select id , nom , prenom from personne";
-      ResultSet rs = stmt.executeQuery(query);
-          
-      System.out.println("Liste des personnes:");
-      while (rs.next()) 
-      {
-              int id = rs.getInt("id"); // id
-              String p = rs.getString("prenom"); // prenom
-              String n = rs.getString("nom");       // nom
-              System.out.println(id+ " " + p + " " + n);
-      }
-      con.close();
-  } 
+@SuppressWarnings("serial")
+@WebServlet("/servlet/Authentification")
+public class Authentification extends HttpServlet {
+	
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		try {
+			Connection con;
+			Statement stmt;
+			Class.forName("org.sqlite.JDBC");
+			con = DriverManager.getConnection("jdbc:sqlite:database.db");
+			stmt = con.createStatement();
+			if (stmt == null) {
+				throw new Exception("Statement null");
+			}	
+			PreparedStatement ps =con.prepareStatement("SELECT * FROM utilisateurs WHERE login=? and mdp=?");
+			ps.setString(1,req.getParameter("login"));
+			ps.setString(2,req.getParameter("mdp"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
