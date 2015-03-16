@@ -3,11 +3,13 @@ public class Utilisateurs {
 	private String nom;
 	private String prenom;
 	private String login;
+	private int age;
 	
-	public Utilisateurs(String login,String prenom,String nom){
+	public Utilisateurs(String login,String prenom,String nom,int age){
 		this.login=login;
 		this.prenom=prenom;
 		this.nom=nom;
+		this.age=age;
 	}
 
 	public String getNom() {
@@ -32,6 +34,12 @@ public class Utilisateurs {
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age=age;
 	}
 
 
