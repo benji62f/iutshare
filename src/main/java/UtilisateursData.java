@@ -3,7 +3,7 @@ public class UtilisateursData {
 	private String prenom;
 	private String pseudo;
 	private String mdp;
-	private String type;
+	private String type; /* admin ou utilisateur */
 	
 
 	public UtilisateursData(String nom,String prenom, String pseudo, String mdp,String type) {
@@ -61,6 +61,6 @@ public class UtilisateursData {
 	}
 
 	public String toString() {
-		return nom+ " " +prenom+ " pseudo: "+pseudo+" mot de passe "+mdp+" est un "+type;
+		return nom+ " " +prenom+ " pseudo: "+pseudo+" mot de passe "+mdp+" . Bienvenue  "+type;
 	}
 }
