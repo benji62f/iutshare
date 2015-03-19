@@ -115,7 +115,17 @@
 		<br>
       </div>
     </div>
-  
+    
+    <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">Image</label>
+        <form method="POST" action="upload.php" enctype="multipart/form-data">
+            <!-- On limite le fichier à 100Ko -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+            <input type="file" name="avatar">
+            <!--<input type="submit" name="envoyer" value="Envoyer le fichier">-->
+</form>
+    </div>
+    
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
 		<a type="submit" class="btn btn-success">Confirmer</a>
