@@ -57,7 +57,7 @@ public class UtilisateursData {
 	}
 
 	public void setTypeUser(String typeUser) {
-		this.type = type;
+		this.type = typeUser;
 	}
 
 	public String toString() {
