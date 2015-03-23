@@ -1,7 +1,9 @@
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/LogInResource.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/Database.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/Utilisateurs.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/App.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/UtilisateursResource.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/UtilisateursData.java
-/home/infoetu/njiedjoz/workspace/iutshare/src/main/java/HelloWorld.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/prgm/UserAccess.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/prgm/App.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/prgm/HelloWorld.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/resources/LogInResource.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/resources/UserResource.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/prgm/User.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/resources/UserData.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/resources/UserDBResource.java
+/home/infoetu/elyagoua/sdd/iutshare/src/main/java/prgm/Database.java
