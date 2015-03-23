@@ -74,44 +74,60 @@
 	
 	<div class="panel panel-primary container">
 		<div class="panel-heading">
-			<h3 class="panel-title"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Nouvelle annonce</h3>
+			<h3 class="panel-title"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Nouveau cours</h3>
 		</div>
 		<div class="panel-body">
 			<fieldset>
-			<h4 class="text-primary">Déposez une petite annonce sur IUT-Share</h4>
-			<h5>Une fois validée par notre équipe éditoriale, votre annonce sera mise en ligne et ainsi 
-			visible par l'ensemble des membres de votre département. Vous pourrez à tout moment modifier ou désactiver votre annonce.</h5>
+			<h4 class="text-primary">Créez votre propre cours sur IUT-Share</h4>
+			<h5>Que vous soyez enseignant ou éleve, IUT-Share vous offre la possiblité de créer votre propre cours en fonction de votre formation et de le partager à tout le monde.Une fois validée par notre équipe éditoriale, votre cours sera mise en ligne et ainsi 
+			visible par l'ensemble des membres du site. Vous pourrez à tout moment modifier, consulter ou supprimer votre cours.</h5>
     <div class="form-group">
-      <label for="select" class="col-lg-2 control-label"> </label>
-      <div class="col-lg-10">
-        <select class="form-control" id="select">
-          <option>Je propose</option>
-		  <option>Je recherche</option>
-        </select>
-        <br>   
-      </div>
-    </div>
-	
+        </br>
+	    <legend>Général</legend>
+	    </br>
     <div class="form-group">
-      <label for="Titre" class="col-lg-2 control-label">Titre*</label>
+      <label for="Titre" class="col-lg-2 control-label">Nom du cours*</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Titre">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Nom du cours">
 		<br>
       </div>
     </div>
     
     <div class="form-group">
-      <label for="textArea" class="col-lg-2 control-label">Description*</label>
+      <label for="select" class="col-lg-2 control-label">Catégories de cours</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
-		<br>
+        <select class="form-control" id="select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        </br>
+      </div>
+    </div>
+    
+    <div class="form-group">
+    
+      <label for="select" class="col-lg-2 control-label">Matières</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="select">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        </br>
       </div>
     </div>
   
-	<div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Lieu</label>
+    <legend>Description</legend>
+        </br>
+      <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Description*</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Titre">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
 		<br>
       </div>
     </div>
@@ -121,15 +137,15 @@
         <form method="POST" action="upload.php" enctype="multipart/form-data">
             <!-- On limite le fichier à 100Ko -->
             <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-            Fichier : <input type="file" name="avatar">
-            <input type="submit" name="envoyer" value="Envoyer le fichier">
-</form>
+            <input type="file" name="avatar">
+            <!--<input type="submit" name="envoyer" value="Envoyer le fichier">-->
+        </form>
     </div>
     
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
 		<a type="submit" class="btn btn-success">Confirmer</a>
-        <a href="annonces.html" type="reset" class="btn btn-default">Annuler</a>
+        <a href="cours.html" type="reset" class="btn btn-default">Annuler</a>
       </div>
     </div>
   </fieldset>
