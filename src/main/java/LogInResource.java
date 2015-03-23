@@ -26,7 +26,7 @@ import javax.ws.rs.core.Response.Status;
 @Produces(MediaType.APPLICATION_JSON)
 public class LogInResource {
 	@POST
-	public UtilisateursData createUser(UtilisateursData user) {
+	public UserData createUser(UserData user) {
 		
 		return user;
 	}
