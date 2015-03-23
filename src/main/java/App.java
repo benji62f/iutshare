@@ -19,16 +19,19 @@ public class App extends Application{
     	System.setProperty("jersey.config.server.tracing", "ALL");
     	
     	Set<Class<?>> s = new HashSet<Class<?>>();
-    	/*on add les classes ressources 
-    	 * s.add(.class)
-    	 */
+    	/*on add les classes ressources */
+    	 s.add(UserData.class);
+    	 s.add(UserDataResource.class);
+    	 s.add(UserResource.class);
+    	
     	return s;
     }
     public static DBI dbi;
     static {
     SQLiteDataSource ds = new SQLiteDataSource();
-    ds.setUrl("jdbc:sqlite:"+System.getProperty("java.io.tmpdir")+System.getProperty("file.separator")+"data.db");
-    dbi = new DBI(ds);
+    ds.setUrl("jdbc:sqlite:"/*+System "java.io.tmpdir")+System.("file.separator")+"*/+"database.db");
+    dbi = new DBI(ds); 
+    
     }
     }
 
