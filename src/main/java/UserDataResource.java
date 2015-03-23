@@ -20,13 +20,13 @@ public class UserDataResource {
 		System.out.println("Table déjà là !");
 		}
 		
-		data.insert("Ayouub");
+		//data.insert("Ayouub");
 	}
 	
 	@POST
 	public User createUser(User user) {
-		String nom = data.insert(user.getNom());
-		user.setNom(nom);
+		data.insert(user.getLogin(),user.getMdp(),user.getNom(),user.getPrenom(),user.getType());
+		
 		
 		return user;
 	}

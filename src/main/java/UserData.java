@@ -7,16 +7,16 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface UserData {
 	
-	@SqlUpdate("create table users (id integer primary key autoincrement, name varchar(100))")
+	@SqlUpdate("CREATE TABLE users (login text, mdp text, nom text, prenom text, age integer, formation text, PRIMARY KEY (login), FOREIGN KEY (formation) REFERENCES formations(libelle))")
 	void createUserTable();
 	
 	@SqlUpdate("insert into users (name) values (:name)")
 	@GetGeneratedKeys
-	String insert(@Bind("name") String name);
+	String insert(@Bind("login") String login,@Bind("mdp") String mdp,@Bind("nom") String nom,@Bind("prenom") String prenom,@Bind("type") String type);
 
-	@SqlQuery("select * from users where name = :name")
+	@SqlQuery("select * from users where nom = :nom")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	User findByName(@Bind("name") String name);
+	User findByName(@Bind("nom") String name);
 	
 	@SqlUpdate("drop table if exists users")
 	void dropUserTable();

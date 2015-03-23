@@ -4,12 +4,16 @@ public class User {
 	private String prenom;
 	private String login;
 	private int age;
+	private String type;
+	private String mdp;
 	
-	public User(String login,String prenom,String nom,int age){
+	public User(String login,String prenom,String nom,int age,String type,String mdp){
 		this.login=login;
 		this.prenom=prenom;
 		this.nom=nom;
 		this.age=age;
+		this.type=type;
+		this.mdp=mdp;
 	}
 
 	public String getNom() {
@@ -40,6 +44,21 @@ public class User {
 	}
 	public void setAge(int age){
 		this.age=age;
+	}
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public String getMdp() {
+		return mdp;
+	}
+
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
 	}
 
 
