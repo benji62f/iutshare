@@ -23,10 +23,10 @@ import javax.ws.rs.core.Response.Status;
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
-	private static Map<String,User > users = new HashMap<>();
+	private static Map<String,User> users = new HashMap<>();
 	
 	@POST
-	public User create(User user) {
+	public User createUser(User user) {
 		
 		users.put(user.getLogin(), user);
 		return user;
@@ -58,7 +58,7 @@ public class UserResource {
 	@Path("{login}")
 	public Response updateUser(@PathParam("login") String login,User user) {
 		User oldUser = find(login);
-		System.out.println("Should update user with id: "+login+" ("+oldUser+") to " +user);
+		System.out.println("Should update user with login: "+login+" ("+oldUser+") to " +user);
 		if (user == null) {
 			throw new WebApplicationException(404);
 		}

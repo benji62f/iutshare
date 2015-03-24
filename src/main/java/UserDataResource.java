@@ -20,7 +20,7 @@ public class UserDataResource {
 		System.out.println("Table déjà là !");
 		}
 		
-		//data.insert("Ayouub");
+		data.insert("ccccc","Acccc","ayoub","ccccc","cccccc");
 	}
 	
 	@POST
