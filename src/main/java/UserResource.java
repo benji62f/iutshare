@@ -1,5 +1,8 @@
 
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,11 +27,13 @@ import javax.ws.rs.core.Response.Status;
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
 	private static Map<String,User> users = new HashMap<>();
-	
+	Statement statement;
+	ResultSet rs ;
 	@POST
-	public User createUser(User user) {
+	public User createUser(User user) throws SQLException {
 		
 		users.put(user.getLogin(), user);
+		 
 		return user;
 	}
 	
@@ -55,10 +60,11 @@ public class UserResource {
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("{login}")
-	public Response updateUser(@PathParam("login") String login,User user) {
+	@Path("update/{login}")
+	public Response updateUser(@PathParam("login") String login,User user) throws SQLException {
 		User oldUser = find(login);
 		System.out.println("Should update user with login: "+login+" ("+oldUser+") to " +user);
+		rs = statement.executeQuery("insert into users (login) values  "+login);
 		if (user == null) {
 			throw new WebApplicationException(404);
 		}

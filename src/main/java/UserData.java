@@ -10,7 +10,7 @@ public interface UserData {
 	@SqlUpdate("CREATE TABLE users (login text, mdp text, nom text, prenom text, age integer, formation text, PRIMARY KEY (login), FOREIGN KEY (formation) REFERENCES formations(libelle))")
 	void createUserTable();
 	
-	@SqlUpdate("insert into users (name) values (:name)")
+	@SqlUpdate("insert into users values (:login,:mdp,:nom,:prenom,:age,:type)")
 	@GetGeneratedKeys
 	String insert(@Bind("login") String login,@Bind("mdp") String mdp,@Bind("nom") String nom,@Bind("prenom") String prenom,@Bind("type") String type);
 

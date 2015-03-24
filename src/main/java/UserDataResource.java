@@ -16,11 +16,10 @@ public class UserDataResource {
 		try {
 			data.createUserTable();
 		}catch (Exception e) {
-		
-		System.out.println("Table déjà là !");
+			
 		}
 		
-		data.insert("ccccc","Acccc","ayoub","ccccc","cccccc");
+		data.insert("cccc","cccc","ayoub","cccc","cccc");
 	}
 	
 	@POST
@@ -35,6 +34,7 @@ public class UserDataResource {
 	@Path("/{name}")
 	public User getUser(@PathParam("name") String name) {
 		User out = data.findByName(name);
+		System.out.println("done");
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}
