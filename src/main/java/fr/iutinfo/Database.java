@@ -111,9 +111,9 @@ public class Database {
 		Connection c=connect();
 		Statement stmt=null;
 		try{
-			stmt=connection.createStatement();
+			/*stmt=connection.createStatement();
 			requete ="CREATE TABLE  amis (personne text, ami text, PRIMARY KEY (personne, ami), FOREIGN KEY (personne) REFERENCES utilisateurs(login), FOREIGN KEY (ami) REFERENCES utilisateurs(login));";
-			stmt.executeUpdate(requete);
+			stmt.executeUpdate(requete);*/
 			
 			stmt=connection.createStatement();
 			requete ="CREATE TABLE matieres_GEII (mno integer, libelle text, PRIMARY KEY (mno));";

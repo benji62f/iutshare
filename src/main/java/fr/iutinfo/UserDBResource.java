@@ -19,12 +19,12 @@ public class UserDBResource {
 		} catch (Exception e) {
 			System.out.println("Table déjà là !");
 		}
-		data.insert(0,"foo","aaa","coucou","coucou",15,"coucou");
+		//data.insert(1,"foo","aaa","coucou","coucou",15,"coucou");
 	}
 	
 	@POST
 	public User createUser(User user) {
-		int id = data.insert(user.getId(),user.getLogin(),user.getMdp(),user.getNom(),user.getPrenom(),user.getAge(),user.getFormation());
+		int id = data.insert(user.getId(),user.getLogin(),user.getMdp(),user.getNom(),user.getPrenom(),user.getType());
 		user.setId(id);
 		return user;
 	}
