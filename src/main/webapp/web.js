@@ -12,20 +12,20 @@ function inscription() {
 		$.ajax({
 			type : 'POST',
 			contentType : 'application/json',
-			url : "v1/userdb/",
+			url : "v1/user/",
 			dataType : "json",
 			data : JSON.stringify({
 				"nom" : $('#nom').val(),
 				"prenom" : $('#prenom').val(),
-				"pseudo" : $('#pseudo').val(),
+				"login" : $('#login').val(),
 				"mdp" : $('#mdp').val(), 
-				"typeUser" : "",
+				"type" : "",
 				"id" : 0
 			}),
 			
 			success : function(data, textStatus, jqXHR) {
 				alert("Inscription réussie");
-				window.location.href = "index.html" ;
+				window.location.href = "accueil.html" ;
 				
 			},
 			

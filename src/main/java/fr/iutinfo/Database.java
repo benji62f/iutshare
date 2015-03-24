@@ -112,7 +112,7 @@ public class Database {
 		Statement stmt=null;
 		try{
 			stmt=connection.createStatement();
-			requete ="CREATE TABLE if amis (personne text, ami text, PRIMARY KEY (personne, ami), FOREIGN KEY (personne) REFERENCES utilisateurs(login), FOREIGN KEY (ami) REFERENCES utilisateurs(login));";
+			requete ="CREATE TABLE  amis (personne text, ami text, PRIMARY KEY (personne, ami), FOREIGN KEY (personne) REFERENCES utilisateurs(login), FOREIGN KEY (ami) REFERENCES utilisateurs(login));";
 			stmt.executeUpdate(requete);
 			
 			stmt=connection.createStatement();
