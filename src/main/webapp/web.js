@@ -1,17 +1,20 @@
-    function decoSite() {
-    if (readCookie("login") != null) {
-        $("#signIn").html("Deconnexion")
-    }
-    
+    function decoSite(){
+        var html ="<button id=\"deconnexion\" onclick=\"deconnexion()\" type=\"button\" class=\"btn btn-primary\">Deconnexion</button>"
+        if (readCookie("login") != null) {
+		$("#signIn").hide();
+		$("#deco").html(html);
+        }
+        $("#deco").hide();
+        $("#signIn").show()
     }
     
     function deconnexion() {
 	eraseCookie("pseudo");
-	window.location.href = "index.html";
+	window.location.href = "accueil.html";
     }
 
     function eraseCookie(name) {
-	createCookie(name,"",-1);
+	createCookie(name,"",-1);) {
     }
     
     function afficherSession() {
@@ -91,7 +94,7 @@
 			dataType : "json",
 			data : JSON.stringify({
 				"nom" : $('#nom').val(),
-				."prenom" : $('#prenom').val(),
+				"prenom" : $('#prenom').val(),
 				"login" : $('#login').val(),
 				"mdp" : $('#mdp').val(),
 				"type" : $('#type').val(), 
