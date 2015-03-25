@@ -20,19 +20,19 @@
     }
 
     function connexion() {
-	var pseudo = $('#pseudo').val();
+	var login = $('#login').val();
 	var mdp = $('#mdp').val();
 	
 	
 	
-	createCookie("pseudo",pseudo,7);
+	createCookie("login",login,7);
 	    	 
-	 $.getJSON("v1/user/"+pseudo+"/"+mdp, function(data) {
+	 $.getJSON("v1/user/"+login+"/"+mdp, function(data) {
 		 if (data == null){
-			 $("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
+			 $("#erreur").html("</br><div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
 			 return 0;
 		 }
-		 createCookie("pseudo",pseudo,7);
+		 createCookie("login",login,7);
 		 window.location.href = "accueil.html";
 		}).error(function() {
 			$("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");

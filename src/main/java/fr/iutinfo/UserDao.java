@@ -20,10 +20,9 @@ public interface UserDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
 	User findByName(@Bind("nom") String nom);
 
-	@SqlQuery("select * from User where login = :login and mdp = :mdp")
+	@SqlQuery("select * from users where login = :login and mdp = :mdp")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	User verifUser(@Bind("login") String pseudo, @Bind("mdp") String mdp);
-	
 	
 	
 	@SqlUpdate("drop table if exists users")

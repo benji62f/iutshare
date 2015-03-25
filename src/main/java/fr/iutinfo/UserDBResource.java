@@ -44,8 +44,8 @@ public class UserDBResource {
 	
 	
 	@GET
-	@Path("/{pseudo}/{mdp}")
-	public User verifUserData(@PathParam("pseudo") String pseudo, @PathParam("mdp") String mdp){
+	@Path("/{login}/{mdp}")
+	public User verifUserData(@PathParam("login") String pseudo, @PathParam("mdp") String mdp){
 		User user = data.verifUser(pseudo, mdp);
 		return user;
 //		if (user == null){

@@ -51,6 +51,15 @@ public class UserResource {
 		}
 		return out;
 	}
+	protected User find(String login, String mdp) {
+		User out = null;
+		for (User user : users.values()) {
+			if (user.getLogin().equals(login) && user.getMdp().equals(mdp)) {
+				return user;
+			}
+		}
+		return out;
+	}
 	protected User find(int id) {
 		return users.get(id);
 	}
@@ -74,6 +83,16 @@ public class UserResource {
 	@Path("/{name}")
 	public User getUser(@PathParam("name") String name ) {
 		User out = find(name);
+		if (out == null) {
+			throw new WebApplicationException(404);
+		}
+		return out;
+	}
+	
+	@GET
+	@Path("/{login}/{mdp}")
+	public User getUser(@PathParam("login") String login, @PathParam("mdp") String mdp) {
+		User out = find(login, mdp);
 		if (out == null) {
 			throw new WebApplicationException(404);
 		}
