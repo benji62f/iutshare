@@ -108,7 +108,7 @@ public class Database {
 		Database db = new Database();
 		
 		db.connect();
-		db.updateValue("create table users (id integer primary key autoincrement, login text, mdp text, nom text, prenom text, age integer, formation text, FOREIGN KEY (formation) REFERENCES formations(libelle))");
+		db.updateValue("CREATE TABLE users (id integer primary key autoincrement, login text, mdp text, nom text, prenom text, age integer, formation text, FOREIGN KEY (formation) REFERENCES formations(libelle))");
 		db.updateValue("CREATE TABLE utilisateurs (login text, mdp text, nom text, prenom text, age integer, formation text, PRIMARY KEY (login), FOREIGN KEY (formation) REFERENCES formations(libelle));");
 		
 		db.updateValue("CREATE TABLE amis (personne text, ami text, PRIMARY KEY (personne, ami), FOREIGN KEY (personne) REFERENCES utilisateurs(login), FOREIGN KEY (ami) REFERENCES utilisateurs(login));");

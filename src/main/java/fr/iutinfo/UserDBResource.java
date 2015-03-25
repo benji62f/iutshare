@@ -8,9 +8,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
-import com.tbe.json.ObjetBoolean;
-import com.tbe.json.ObjetjSON;
-
 @Path("/userdb")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserDBResource {
@@ -18,7 +15,7 @@ public class UserDBResource {
 
 	public UserDBResource() {
 		try {
-			data.createUserTable();
+			data.createUser_Table();
 		} catch (Exception e) {
 			System.out.println("Table déjà là !");
 		}
