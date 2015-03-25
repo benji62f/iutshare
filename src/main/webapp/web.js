@@ -25,7 +25,7 @@ function inscription() {
 			
 			success : function(data, textStatus, jqXHR) {
 				alert("Inscription réussie");
-				window.location.href = "accueil.html" ;
+				window.location.href = "authent.html" ;
 				
 			},
 			
@@ -35,4 +35,87 @@ function inscription() {
 			}
 		});
 	}
+	
+	function deconnexion() {
+	eraseCookie("pseudo");
+	window.location.href = "index.html";
+    }
+
+    function connexion() {
+	var pseudo = $('#pseudo').val();
+	var mdp = $('#mdp').val();
+	
+	console.log("Creation cookie");
+	
+	createCookie("pseudo",pseudo,7);
+	    
+		$.ajax({
+			type : 'POST',
+			contentType : 'application/json',
+			url : "v1/user/connexion",
+			dataType : "json",
+			data : JSON.stringify({
+				"login" : login,
+			    "password" : mdp,
+			}),
+			
+			success : function(data, textStatus, jqXHR) {
+				alert("Connxion réussie");
+				window.location.href = "acceuil.html" ;
+			},
+			
+			error : function(jqXHR, textStatus, errorThrown) {
+				$("#message").html("Connexion echouée !");
+				alert('postUser error: ' + textStatus + " " + errorThrown);
+			}
+		});
+	
+	 /*
+	 $.getJSON("v1/user/"+pseudo+"/"+mdp, function(data) {
+		 if (data == null){
+			 $("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
+			 return 0;
+		 }
+		 createCookie("pseudo",pseudo,7);
+		 window.location.href = "accueil.html";
+		}).error(function() {
+			$("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
+		});
+		*/
+    }
+
+    function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+    }
+
+    function afficherSession() {
+	var html = 'Tu es ';
+	if (readCookie("pseudo") == null) {
+		window.location.href = "acceuil.html";
+	} else {
+		html = html + readCookie("pseudo");
+		$("#session").html(html);
+	}
+    }
+
+    function eraseCookie(name) {
+	createCookie(name,"",-1);
+    }
 }

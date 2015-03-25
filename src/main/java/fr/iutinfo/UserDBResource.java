@@ -8,6 +8,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
+import com.tbe.json.ObjetBoolean;
+import com.tbe.json.ObjetjSON;
+
 @Path("/userdb")
 @Produces(MediaType.APPLICATION_JSON)
 public class UserDBResource {
@@ -30,7 +33,7 @@ public class UserDBResource {
 	}
 
 	@GET
-	@Path("/{name}")
+	@Path("/getUserName/{name}")
 	public User getUser(@PathParam("name") String name) {
 		User out = data.findByName(name);
 		if (out == null) {
@@ -39,15 +42,14 @@ public class UserDBResource {
 		return out;
 	}
 	
-	@GET
-	@Path("/{pseudo}/{mdp}")
-	public User verifUserData(@PathParam("pseudo") String pseudo, @PathParam("mdp") String mdp){
-		User user = data.verifUser(pseudo, mdp);
-		return user;
-//		if (user == null){
-//			return false;
-//		}
-//		return true;
+	
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/connexion")
+	public ObjetBoolean getUser(ObjetjSON oj) {
+		System.out.println("Getting user : " + oj.getLogin() + " " + oj.getPassword());
+		return new ObjetBoolean(data.verifUser(oj.getLogin(), oj.getPassword()));
 	}
 
 }

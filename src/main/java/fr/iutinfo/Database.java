@@ -106,8 +106,9 @@ public class Database {
     
     public static void main(String[] args) {
 		Database db = new Database();
-		db.connect();
 		
+		db.connect();
+		db.updateValue("create table users (id integer primary key autoincrement, login text, mdp text, nom text, prenom text, age integer, formation text, FOREIGN KEY (formation) REFERENCES formations(libelle))");
 		db.updateValue("CREATE TABLE utilisateurs (login text, mdp text, nom text, prenom text, age integer, formation text, PRIMARY KEY (login), FOREIGN KEY (formation) REFERENCES formations(libelle));");
 		
 		db.updateValue("CREATE TABLE amis (personne text, ami text, PRIMARY KEY (personne, ami), FOREIGN KEY (personne) REFERENCES utilisateurs(login), FOREIGN KEY (ami) REFERENCES utilisateurs(login));");
@@ -120,7 +121,7 @@ public class Database {
 		db.updateValue("CREATE TABLE matieres_CHIMIE (mno integer, libelle text, PRIMARY KEY (mno));");
 		db.updateValue("CREATE TABLE matieres_GEA (mno integer, libelle text, PRIMARY KEY (mno));");
 		
-		db.updateValue("CREATE TABLE formations (libelle text, PRIMARY KEY (libelle);");
+		db.updateValue("CREATE TABLE formations (libelle text, PRIMARY KEY (libelle));");
 		db.updateValue("INSERT into formations VALUES('GEII');");
 		db.updateValue("INSERT into formations VALUES('GMP');");
 		db.updateValue("INSERT into formations VALUES('INFORMATIQUE');");
@@ -129,16 +130,16 @@ public class Database {
 		db.updateValue("INSERT into formations VALUES('CHIMIE');");
 		db.updateValue("INSERT into formations VALUES('GEA');");
 		
-		db.updateValue("CREATE TABLE topics_GEII (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GEII(mno);");
-		db.updateValue("CREATE TABLE topics_GMP (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GMP(mno);");
-		db.updateValue("CREATE TABLE topics_INFORMATIQUE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_INFORMATIQUE(mno);");
-		db.updateValue("CREATE TABLE topics_MESURES_PHYSIQUES (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_MESURES_PHYSIQUES(mno);");
-		db.updateValue("CREATE TABLE topics_GENIE_BIOLOGIQUE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GENIE_BIOLOGIQUE(mno);");
-		db.updateValue("CREATE TABLE topics_CHIMIE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_CHIMIE(mno);");
-		db.updateValue("CREATE TABLE topics_GEA (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GEA(mno);");
+		db.updateValue("CREATE TABLE topics_GEII (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GEII(mno));");
+		db.updateValue("CREATE TABLE topics_GMP (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GMP(mno));");
+		db.updateValue("CREATE TABLE topics_INFORMATIQUE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_INFORMATIQUE(mno));");
+		db.updateValue("CREATE TABLE topics_MESURES_PHYSIQUES (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_MESURES_PHYSIQUES(mno));");
+		db.updateValue("CREATE TABLE topics_GENIE_BIOLOGIQUE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GENIE_BIOLOGIQUE(mno));");
+		db.updateValue("CREATE TABLE topics_CHIMIE (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_CHIMIE(mno));");
+		db.updateValue("CREATE TABLE topics_GEA (tno integer, formation text, matiere integer, PRIMARY KEY (tno), FOREIGN KEY (formation) REFERENCES formations(libelle), FOREIGN KEY (matiere) REFERENCES matieres_GEA(mno));");
 
 		
-		db.updateValue("CREATE TABLE actualites (actuno integer, titre text, contenu text, date date, PRIMARY KET (actuno));");
+		db.updateValue("CREATE TABLE actualites (actuno integer, titre text, contenu text, date date, PRIMARY KEY (actuno));");
 		
 		db.updateValue("CREATE TABLE messages (mno integer, message text, date date, titre text, PRIMARY KEY (mno));");
 		
