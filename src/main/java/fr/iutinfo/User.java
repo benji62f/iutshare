@@ -76,7 +76,7 @@ public class User {
 	}
 	
 	public String getFormation() {
-		return mdp;
+		return formation;
 	}
 
 	public void setFormation(String formation) {

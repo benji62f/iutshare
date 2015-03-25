@@ -18,8 +18,8 @@ function inscription() {
 				"nom" : $('#nom').val(),
 				"prenom" : $('#prenom').val(),
 				"login" : $('#login').val(),
-				"mdp" : $('#mdp').val(), 
-				"type" : "",
+				"mdp" : $('#mdp').val(),
+				"type" : $('#type').val(), 
 				"id" : 0
 			}),
 			
