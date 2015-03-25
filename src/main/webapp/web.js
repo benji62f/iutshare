@@ -1,3 +1,36 @@
+    function decoSite() {
+    if (readCookie("login") != null) {
+        $("#signIn").html("Deconnexion")
+    }
+    
+    }
+    
+    function deconnexion() {
+	eraseCookie("pseudo");
+	window.location.href = "index.html";
+    }
+
+    function eraseCookie(name) {
+	createCookie(name,"",-1);
+    }
+    
+    function afficherSession() {
+	var html = '<h3>Tu es</h3> ';
+	var baratin = '<h3>Vous n\'êtes pas encore authentifié pour pouvoir accèder à cette rubrique, veuillez cliquer sur le bouton ci dessous pour le faire</h3>';
+	if (readCookie("login") == null) {
+		/*window.location.href = "accueil.html";*/
+		$("#session").html(baratin)
+	} else {
+		html = html + readCookie("login");
+		$("#session").html(html);
+	}
+    }
+    
+    function createCookie(pseudo, nom, prenom, age, formation) {
+    
+    
+    }
+    
     function createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();
@@ -38,7 +71,6 @@
 			$("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
 		});
 		
-		console.log("Creation cookie");
     }
 
     function inscription() {
@@ -59,7 +91,7 @@
 			dataType : "json",
 			data : JSON.stringify({
 				"nom" : $('#nom').val(),
-				"prenom" : $('#prenom').val(),
+				."prenom" : $('#prenom').val(),
 				"login" : $('#login').val(),
 				"mdp" : $('#mdp').val(),
 				"type" : $('#type').val(), 
@@ -79,22 +111,4 @@
 		});
 	}
 	
-	function deconnexion() {
-	eraseCookie("pseudo");
-	window.location.href = "index.html";
-    }
-
-    function afficherSession() {
-	var html = 'Tu es ';
-	if (readCookie("pseudo") == null) {
-		window.location.href = "acceuil.html";
-	} else {
-		html = html + readCookie("pseudo");
-		$("#session").html(html);
-	}
-    }
-
-    function eraseCookie(name) {
-	createCookie(name,"",-1);
-    }
 }
