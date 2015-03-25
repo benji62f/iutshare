@@ -24,4 +24,8 @@ public interface UserDao {
 	void dropUserTable(); 
 	
 	void close();
+
+	@SqlQuery("select * from UserData where login = :login and mdp = :mdp")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	User verifUser(@Bind("login") String pseudo, @Bind("mdp") String mdp);
 }
