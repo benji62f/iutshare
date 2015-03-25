@@ -22,7 +22,7 @@ public interface UserDao {
 
 	@SqlQuery("select * from User where login = :login and mdp = :mdp")
 	@RegisterMapperFactory(BeanMapperFactory.class)
-	boolean verifUser(@Bind("login") String pseudo, @Bind("mdp") String mdp);
+	User verifUser(@Bind("login") String pseudo, @Bind("mdp") String mdp);
 	
 	
 	

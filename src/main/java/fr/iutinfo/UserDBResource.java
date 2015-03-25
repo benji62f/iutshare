@@ -43,13 +43,14 @@ public class UserDBResource {
 	}
 	
 	
-	
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/connexion")
-	public ObjetBoolean getUser(ObjetjSON oj) {
-		System.out.println("Getting user : " + oj.getLogin() + " " + oj.getPassword());
-		return new ObjetBoolean(data.verifUser(oj.getLogin(), oj.getPassword()));
+	@GET
+	@Path("/{pseudo}/{mdp}")
+	public User verifUserData(@PathParam("pseudo") String pseudo, @PathParam("mdp") String mdp){
+		User user = data.verifUser(pseudo, mdp);
+		return user;
+//		if (user == null){
+//			return false;
+//		}
+//		return true;
 	}
-
 }
