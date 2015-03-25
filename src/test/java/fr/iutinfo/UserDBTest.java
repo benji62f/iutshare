@@ -29,7 +29,7 @@ public class UserDBTest extends JerseyTest {
 	@Before
 	public void init () {
 		dao.dropUserTable();
-		dao.createUserTable();			
+		dao.createUser_Table();			
 	}
 	
 	/*@Test
