@@ -24,7 +24,7 @@ public class UserDBResource {
 	
 	@POST
 	public User createUser(User user) {
-		int id = data.insert(user.getId(),user.getLogin(),user.getMdp(),user.getNom(),user.getPrenom(),user.getType());
+		int id = data.insertUser(user.getId(),user.getLogin(),user.getMdp(),user.getNom(),user.getPrenom(),user.getType());
 		user.setId(id);
 		return user;
 	}
@@ -50,4 +50,7 @@ public class UserDBResource {
 //		}
 //		return true;
 	}
+	
+
+	
 }

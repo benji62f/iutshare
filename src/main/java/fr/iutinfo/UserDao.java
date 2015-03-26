@@ -73,8 +73,12 @@ public interface UserDao {
 	
 	@SqlUpdate("INSERT into users  values (:id,:login,:mdp,:nom,:prenom,:type)")
 	@GetGeneratedKeys
-	int insert(@Bind("id") int id,@Bind("login") String login,@Bind("mdp") String mdp,@Bind("nom") String nom,@Bind("prenom") String prenom,@Bind("type") String type);
-
+	int insertUser(@Bind("id") int id,@Bind("login") String login,@Bind("mdp") String mdp,@Bind("nom") String nom,@Bind("prenom") String prenom,@Bind("type") String type);
+	
+	@SqlUpdate("INSERT into annonces  values (:titre,:msg,:lieu)")
+	@GetGeneratedKeys
+	int insertAnnonces(@Bind("titre") String titre,@Bind("lmsg") String msg,@Bind("lieu") String lieu);
+	
 	@SqlQuery("SELECT * from users where nom = :nom")
     @RegisterMapperFactory(BeanMapperFactory.class)
 	User findByName(@Bind("nom") String nom);
