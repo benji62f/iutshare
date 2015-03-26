@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IUT-Share - insertion</title>
+<script type="text/javascript" src="editeur.js"> </script>
+</head>
+<body>
+<div id="main">
+	<form action="" method="post">
+		<div>
+		
+			<p>
+				<input type="button" value="G" onclick="insertTag('&lt;gras&gt;', '&lt;/gras&gt;', 'textarea')" />
+				<input type="button" value="I" onclick="insertTag('&lt;italique&gt;', '&lt;/italique&gt;', 'textarea')" />
+				<input type="button" value="Lien" onclick="insertTag('', '', 'textarea', 'lien')" />
+				<input type="button" value="Image" onclick="insertTag('&lt;image&gt;', '&lt;/image&gt;', 'textarea')" />
+				<input type="button" value="Citation" onclick="insertTag('', '', 'textarea', 'citation')" />
+				
+				<select onchange="insertTag('&lt;taille valeur=&quot;' + this.options[this.selectedIndex].value + '&quot;&gt;', '&lt;/taille&gt;', 'textarea');">
+					<option value="none" class="selected" selected="selected">Taille</option>
+					<option value="ttpetit">Très très petit</option>
+					<option value="tpetit">Très petit</option>
+					<option value="petit">Petit</option>
+					<option value="gros">Gros</option>
+					<option value="tgros">Très gros</option>
+					<option value="ttgros">Très très gros</option>
+				</select>
+			</p>
+			
+			<p>
+				<input name="previsualisation" type="checkbox" id="previsualisation" value="previsualisation" />
+				<label for="previsualisation">Pr&eacute;visualisation automatique</label>
+			</p>
+			
+		</div>
+		
+		<textarea onkeyup="preview(this, 'previewDiv');" onselect="preview(this, 'previewDiv');" id="textarea" cols="150" rows="10"></textarea>
+		
+		<div id="previewDiv"></div>
+		
+		<p>
+			<input type="button" value="Visualiser" onclick="view('textarea','viewDiv');" />
+		</p>
+		
+		<div id="viewDiv"></div>
+	</form>
+	
+</div>
+</body>
+</html>

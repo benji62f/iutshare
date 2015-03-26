@@ -14,7 +14,7 @@
     }
 
     function eraseCookie(name) {
-	createCookie(name,"",-1);) {
+	createCookie(name,"",-1);
     }
     
     function afficherSession() {
