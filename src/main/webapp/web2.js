@@ -34,3 +34,18 @@
 		});
 	}
 	}
+	function listUsers() {
+	$.getJSON("v1/annonce/", function(data) {
+		afficheListUsers(data)
+	});
+}
+	
+	function afficheListUsers(data) {
+	var html = '<tr>';
+	var index = 0;
+	for (index = 0; index < data.length; ++index) {
+		html = html + "<td>" + data[index].titre + "</td>";
+	}
+	html = html + '</tr>';
+	$("#reponse").html(html);
+}

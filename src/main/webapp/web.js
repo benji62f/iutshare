@@ -37,10 +37,6 @@
 	}
     }
     
-    function createCookie(pseudo, nom, prenom, age, formation) {
-    
-    
-    }
     
     function createCookie(name,value,days) {
 	if (days) {
@@ -115,10 +111,6 @@
 				
 			},
 			
-			error : function(jqXHR, textStatus, errorThrown) {
-				$("#message").html("Inscription echouée !");
-				alert('postUser error: ' + textStatus + " " + errorThrown);
-			}
 		});
 	}
 	

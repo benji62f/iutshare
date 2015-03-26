@@ -73,8 +73,8 @@
 			</div>	
 		</nav>
 	</div>
-	
-	<div class="panel panel-primary container">
+		<div class="container">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Nouvelle annonce</h3>
 		</div>
@@ -130,14 +130,14 @@
     
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-		<a type="submit" class="btn btn-success" onclick="creerAnnonce()">Confirmer</a>
+		<button id="list" type="submit" class="btn btn-success" onclick="creerAnnonce()">Confirmer</button>
         <a href="annonces.html" type="reset" class="btn btn-default">Annuler</a>
       </div>
     </div>
   </fieldset>
 		</div>
 	</div>
-
+    </div>
 		
 		<div id="volet_clos">
 			<div id="volet">
@@ -162,6 +162,11 @@
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script>$(document).ready(afficherSession());</script>
 	<script>$(document).ready(decoSite());</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#list").click(function () {listUsers()});
+			});
+  		</script>
 	
 
 

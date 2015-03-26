@@ -5,7 +5,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IUT-Share - Accueil</title>
-<script type="text/javascript" src="editeur.js"> </script>
 <!-- Bootstrap -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" media="screen" type="text/css" title="Mon design 1" href="dist/css/slide.css" />
@@ -17,6 +16,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script src="web.js"></script>
+<script type="text/javascript" src="editeur.js"> </script>
 </head>
 <body>
 	<div class="container">
@@ -158,13 +158,12 @@
 			</p>
 			
 		</div>
-		
-		<textarea onkeyup="preview(this, 'previewDiv');" onselect="preview(this, 'previewDiv');" id="textarea" cols="150" rows="10"></textarea>
+		<textarea onkeyup="preview(this, 'previewDiv');" onselect="preview(this, 'previewDiv');" id="textarea" cols="100" rows="10"></textarea>
 		
 		<div id="previewDiv"></div>
 		
 		<p>
-			<input type="button" value="Visualiser" onclick="view('textarea','viewDiv');" />
+			<!--<input type="button" value="Visualiser" onclick="view('textarea','viewDiv');" />-->
 		</p>
 		
 		<div id="viewDiv"></div>

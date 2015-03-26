@@ -79,6 +79,10 @@ public interface UserDao {
 	@GetGeneratedKeys
 	int insertAnnonces(@Bind("titre") String titre,@Bind("msg") String msg,@Bind("lieu") String lieu,@Bind("type") String type);
 	
+	@SqlQuery("SELECT * from User where ano = :ano")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Annonce verifAnnonce(@Bind("ano") String ano);
+	
 	@SqlQuery("SELECT * from users where nom = :nom")
     @RegisterMapperFactory(BeanMapperFactory.class)
 	User findByName(@Bind("nom") String nom);
