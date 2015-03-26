@@ -39,6 +39,16 @@ public class UserDBResource {
 		return out;
 	}
 	
+	@GET
+	@Path("/getUserName/{login}")
+	public User getUserByLogin(@PathParam("login") String login) {
+		User out = data.findByName(login);
+		if (out == null) {
+			throw new WebApplicationException(404);
+		}
+		return out;
+	}
+	
 	
 	@GET
 	@Path("/{login}/{mdp}")
