@@ -52,7 +52,8 @@
 					</form>
 					
 					<div class="nav navbar-nav navbar-right">
-						<a  type="button" href="authent.html" class="btn btn-primary navbar-btn">Sign in</a>
+					    <div id="deco"></div>
+						<a  id="signIn" type="button" href="authent.html" class="btn btn-primary navbar-btn">Sign in</a>
 					</div>
 					<!--
 					<ul class="nav navbar-nav navbar-right">
@@ -101,8 +102,11 @@
 		
 		<div id="volet_clos">
 			<div id="volet">
-				<p id="session"><h3 class=""text-center"">Vous n'êtes pas encore authentifié pour pouvoir accèder à cette rubrique, veuillez cliquer sur le bouton ci dessous pour le faire</h3></p>
-				<a  type="button" href="authent.html" class="btn btn-default navbar-btn col-md-8 col-md-offset-2">Sign in</a>
+				<p id="session" class="text-justify">
+				                 
+				                     </p>
+				 <div id="deco2"></div>                    
+				<a  id="signIn2" type="button" href="authent.html" class="btn btn-default navbar-btn col-md-8 col-md-offset-2">Sign in</a>
 				<a href="#volet" class="ouvrir" aria-hidden="true">Ouvrir !</a>
 				<a href="#volet_clos" class="fermer" aria-hidden="true">fermer !</a>
 			</div>
@@ -121,6 +125,7 @@
 	
 
     <script>$(document).ready(afficherSession());</script>
+	<script>$(document).ready(decoSite());</script>
 
 </body>
 </html>

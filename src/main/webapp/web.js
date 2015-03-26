@@ -4,9 +4,14 @@
 		$("#signIn").hide();
 		$("#deco").html(html);
 		$("#deco").show();
+		$("#signIn2").hide();
+		$("#deco2").html(html);
+		$("#deco2").show();
         }else{
         $("#deco").hide();
-        $("#signIn").show()
+        $("#signIn").show();
+        $("#deco2").hide();
+        $("#signIn2").show();
         }
     }
     
@@ -20,13 +25,14 @@
     }
     
     function afficherSession() {
-	var html = '<h3>Tu es</h3> ';
+	var html = '<h2>Bonjour ';
+	var htmlsuite = '<h3>Nom prenom</h3><h3>Age</br></br></h3><h3>Formation choisie</h3><h3>Editer votre Profil</h3>';
 	var baratin = '<h3>Vous n\'êtes pas encore authentifié pour pouvoir accèder à cette rubrique, veuillez cliquer sur le bouton ci dessous pour le faire</h3>';
 	if (readCookie("login") == null) {
 		/*window.location.href = "accueil.html";*/
 		$("#session").html(baratin)
 	} else {
-		html = html + readCookie("login");
+		html = html +readCookie("login")+"</h2> " + htmlsuite;
 		$("#session").html(html);
 	}
     }
