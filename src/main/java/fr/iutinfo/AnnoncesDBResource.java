@@ -21,13 +21,13 @@ public class AnnoncesDBResource {
 		}
 		
 	}
-	
+	/*
 	@POST
-	public Annonces createAnnonces(Annonces annonce) {
+	public Annonce createAnnonces(Annonce annonce) {
 		int id = data.insertAnnonces(annonce.getTitre(), annonce.getMsg(), annonce.getLieu());
 		annonce.setAno(id);
 		return annonce;
 	}
-
+*/
 	
 }

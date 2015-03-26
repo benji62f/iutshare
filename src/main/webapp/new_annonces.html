@@ -17,6 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script src="web.js"></script>
+<script src="web2.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -85,7 +86,7 @@
     <div class="form-group">
       <label for="select" class="col-lg-2 control-label"> </label>
       <div class="col-lg-10">
-        <select class="form-control" id="select">
+        <select class="form-control" id="selectType">
           <option>Je propose</option>
 		  <option>Je recherche</option>
         </select>
@@ -96,7 +97,7 @@
     <div class="form-group">
       <label for="Titre" class="col-lg-2 control-label">Titre*</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Titre">
+        <input type="text" class="form-control" id="titre" placeholder="Titre">
 		<br>
       </div>
     </div>
@@ -104,7 +105,7 @@
     <div class="form-group">
       <label for="textArea" class="col-lg-2 control-label">Description*</label>
       <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <textarea class="form-control" rows="3" id="msg"></textarea>
 		<br>
       </div>
     </div>
@@ -112,7 +113,7 @@
 	<div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Lieu</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Titre">
+        <input type="text" class="form-control" id="lieu" placeholder="Titre">
 		<br>
       </div>
     </div>
@@ -129,7 +130,7 @@
     
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-		<a type="submit" class="btn btn-success">Confirmer</a>
+		<a type="submit" class="btn btn-success" onclick="creerAnnonce()">Confirmer</a>
         <a href="annonces.html" type="reset" class="btn btn-default">Annuler</a>
       </div>
     </div>
@@ -159,7 +160,6 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="dist/js/bootstrap.min.js"></script>
-	<script src="../js/jquery.js"></script>
 	<script>$(document).ready(afficherSession());</script>
 	<script>$(document).ready(decoSite());</script>
 	

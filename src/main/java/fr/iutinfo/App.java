@@ -18,6 +18,7 @@ public class App extends Application {
     	s.add(UserResource.class);
     	s.add(LoggingFilter.class);
     	s.add(UserDBResource.class);
+    	s.add(AnnoncesRessource.class);	
     	return s;
     }
     

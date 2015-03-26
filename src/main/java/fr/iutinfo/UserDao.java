@@ -68,16 +68,16 @@ public interface UserDao {
 	@SqlUpdate("CREATE TABLE messages (mno integer, message text, date date, titre text, PRIMARY KEY (mno));")
 	void createMessages_Table();
 	
-	@SqlUpdate("CREATE TABLE annonces (ano integer, loginProprio text, message text, date date, titre text, PRIMARY KEY (ano));")
+	@SqlUpdate("CREATE TABLE annonces (ano integer, loginProprio text, message text, date date, titre text, type text, lieu text, PRIMARY KEY (ano));")
 	void createAnnonces_Table();
 	
 	@SqlUpdate("INSERT into users  values (:id,:login,:mdp,:nom,:prenom,:type)")
 	@GetGeneratedKeys
 	int insertUser(@Bind("id") int id,@Bind("login") String login,@Bind("mdp") String mdp,@Bind("nom") String nom,@Bind("prenom") String prenom,@Bind("type") String type);
 	
-	@SqlUpdate("INSERT into annonces  values (:titre,:msg,:lieu)")
+	@SqlUpdate("INSERT into annonces  values (:titre,:msg,:lieu,:type)")
 	@GetGeneratedKeys
-	int insertAnnonces(@Bind("titre") String titre,@Bind("lmsg") String msg,@Bind("lieu") String lieu);
+	int insertAnnonces(@Bind("titre") String titre,@Bind("msg") String msg,@Bind("lieu") String lieu,@Bind("type") String type);
 	
 	@SqlQuery("SELECT * from users where nom = :nom")
     @RegisterMapperFactory(BeanMapperFactory.class)
