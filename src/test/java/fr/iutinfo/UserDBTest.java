@@ -1,4 +1,4 @@
-package fr.iutinfo;
+/*package fr.iutinfo;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,7 +37,7 @@ public class UserDBTest extends JerseyTest {
 		createUser("foo");
 		User utilisateur = target("/userdb/foo").request().get(User.class);
 		assertEquals("foo", utilisateur.getNom());
-	}*/
+	}
 
 	@Test
 	public void testCreateUserMustReturnUserWithId() {
@@ -48,12 +48,12 @@ public class UserDBTest extends JerseyTest {
 		
 	}
 
-	/*private User createUser(String name) {
+	private User createUser(String name) {
 		User user = new User(0, name);
 	    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
 		User savedUser = target("/userdb").request().post(userEntity).readEntity(User.class);
 		return savedUser;
-	}*/
+	}
 	
 	
-}
+}*/

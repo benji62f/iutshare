@@ -1,4 +1,4 @@
-package fr.iutinfo;
+/*package fr.iutinfo;
 
 import static org.junit.Assert.assertEquals;
 
@@ -26,3 +26,4 @@ public class RestClientTest extends JerseyTest {
 		assertEquals(2, users.size());
 	}
 }
+*/
