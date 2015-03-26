@@ -40,7 +40,7 @@ public class UserDBResource {
 	}
 	
 	@GET
-	@Path("/getUserName/{login}")
+	@Path("/getUserbyLogin/{login}")
 	public User getUserByLogin(@PathParam("login") String login) {
 		User out = data.findByName(login);
 		if (out == null) {
