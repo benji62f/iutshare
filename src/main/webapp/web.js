@@ -3,14 +3,16 @@
         if (readCookie("login") != null) {
 		$("#signIn").hide();
 		$("#deco").html(html);
-        }
+		$("#deco").show();
+        }else{
         $("#deco").hide();
         $("#signIn").show()
+        }
     }
     
     function deconnexion() {
-	eraseCookie("pseudo");
-	window.location.href = "accueil.html";
+	eraseCookie("login");
+	void window.location.reload();
     }
 
     function eraseCookie(name) {
