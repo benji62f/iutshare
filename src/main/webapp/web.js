@@ -1,3 +1,12 @@
+    function logRedirect(){
+        adresse = window.location.href
+        if (readCookie("login") == null) {
+            window.location.href = "authent.html";
+        }
+        return adresse;
+    }
+    
+    
     function decoSite(){
         var html ="<button id=\"deconnexion\" onclick=\"deconnexion()\" type=\"button\" class=\"btn btn-primary\">Deconnexion</button>"
         if (readCookie("login") != null) {
@@ -74,6 +83,9 @@
 		 }
 		 createCookie("login",login,7);
 		 window.location.href = "accueil.html";
+		 /*if(logRedirect() === "mes_abonnements.html"){
+		 window.location.href = "mes_abonnements.html";
+		 }*/
 		}).error(function() {
 			$("#erreur").html("<div class='alert alert-danger' role='alert'>Mauvais Identifiant</div>");
 		});
